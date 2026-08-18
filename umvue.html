@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.16">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>7&nbsp; Minimum Variance Estimators – Theory of Statistical Inference</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,15 +35,17 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-792aea850e7e5573310f85939a37799b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-f79c7fb6db380d32be398468f2fb58cf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-756b3216100cf6faba8ed10949d356b0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a7b5894d5a4c39c6aa3484761f021c1f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/custombook-1.0.0/num_eq.js"></script>
+<script src="site_libs/quarto-contrib/custombook-1.0.0/merge-toc.js"></script>
+<link href="site_libs/quarto-contrib/custombook-1.0.0/bookstyles.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,12 +75,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link rel="stylesheet" href="resources/bookstyles.css">
-<script src="resources/num_eq.js"></script>
-<script src="resources/merge-toc.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -412,7 +414,7 @@ g(T) = 0 \implies h(T) = T \quad \text{with probability 1.}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-proof-diagram-r" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" style="width: 70% !important; display: block; margin-left: auto; margin-right: auto;">
+<div id="fig-proof-diagram-r" class="quarto-float quarto-figure quarto-figure-center anchored" style="width: 70% !important; display: block; margin-left: auto; margin-right: auto;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-proof-diagram-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="umvue_files/figure-html/fig-proof-diagram-r-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width: 70% !important; display: block; margin-left: auto; margin-right: auto;" width="576">
@@ -427,7 +429,7 @@ Figure&nbsp;7.1: Logical flow of the proof: Showing T is a function of any suffi
 <p>The relationship between statistics types is visualized by <a href="#fig-stats-hierarchy" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-stats-hierarchy" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" style="width: 70% !important; display: block; margin-left: auto; margin-right: auto;">
+<div id="fig-stats-hierarchy" class="quarto-float quarto-figure quarto-figure-center anchored" style="width: 70% !important; display: block; margin-left: auto; margin-right: auto;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stats-hierarchy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="umvue_files/figure-html/fig-stats-hierarchy-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width: 70% !important; display: block; margin-left: auto; margin-right: auto;" width="480">
@@ -507,7 +509,7 @@ E[\phi(T) - \psi(T) | \theta] = E[\phi(T)|\theta] - E[\psi(T)|\theta] = \theta -
 <h2 data-number="7.3" class="anchored" data-anchor-id="a-procedure-to-find-umvue"><span class="header-section-number">7.3</span> A Procedure to Find UMVUE</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-umvue-logic" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" style="display: block; margin: auto;width: 90% !important;">
+<div id="fig-umvue-logic" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: block; margin: auto;width: 90% !important;" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-umvue-logic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="umvue_files/figure-html/fig-umvue-logic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="display: block; margin: auto;width: 90% !important;" width="576">
@@ -609,7 +611,7 @@ Table&nbsp;7.1: Positive correction factors <span class="math inline">\(C(n)\)</
 </figcaption>
 <div aria-describedby="tbl-log-bias-correction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: center;"><span class="math inline">\(n\)</span></th>
