@@ -1,12 +1,9 @@
 ---
+title: "A Short List of Contributors to Statistical Inference Based On Likelihood"
 format: 
   html: default
   pdf: default
 ---
-
-# Appendices 
-
-## A Short List of Contributors to Statistical Inference Based On Likelihood 
 
 1.  **R.A. Fisher (1922, 1925)**
     * *Affiliation:* Rothamsted / University College London (UCL)
