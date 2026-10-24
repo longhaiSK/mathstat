@@ -13,6 +13,11 @@ execute:
 from: markdown+tex_math_single_backslash+tex_math_dollars
 filters:
   - shinylive
+author:
+  - name: "Longhai Li"
+    affiliation: "University of Saskatchewan"
+    url: "https://longhaisk.github.io/"
+date: last-modified
 book:
   title: "Theory of Statistical Inference"
   output-file: mathstat-LLI
